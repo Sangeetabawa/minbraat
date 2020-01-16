@@ -1,0 +1,17 @@
+<p>Cities</p>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+               
+            <div class="form-group">
+                <label>City :</label>
+                 <select formControlName="city" class="form-control" (change)="changeCity()" >
+                    <option value="" disabled>Choose your City</option>
+                 <option *ngFor="let city of allCity" [ngValue]="city">
+                     {{ city.cityName }}
+                 </option>
+                </select>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<p>All States</p>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+               
+            <div class="form-group">
+                <label></label>
+                 <select formControlName="state" class="form-control" (change)="changeState()" >
+                    <option value="" disabled>Choose your State</option>
+                 <option *ngFor="let state of allState" [ngValue]="state">
+                     {{ state.stateName }}
+                 </option>
+                </select>
+            </div>
+            <div *ngIf="stateId">
+                <app-cities [childMessage]="stateId"      (parentMessage)=receivedValue($event)></app-cities>
+                     
+                </div>
+            <div *ngIf="cityData" class="form-group">
+                <button class="btn btn-primary">Submit &nbsp;</button>
+            </div>
+        </form>
+    </div>
+</div>
