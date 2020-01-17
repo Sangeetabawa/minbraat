@@ -8,19 +8,19 @@ import { BehaviorSubject } from 'rxjs';
 export class DataService {
   data: any
   
-  private updatedData = new BehaviorSubject<any>(5);
+  private updatedData = new BehaviorSubject<any>(1);
   newdata$ = this.updatedData.asObservable();
   constructor(private http: HttpClient) {
-   
+    console.log(this.updatedData)
+    console.log(this.newdata$)
    }
 
    
   StateCityData(data: any) {
-    // this.updatedData.next(10);
+   console.log(data)
     
     this.updatedData.next(data);
-    console.log(this.updatedData)
-    console.log(this.newdata$)
+    
   }
 
   getData() {

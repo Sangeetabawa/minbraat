@@ -6,7 +6,7 @@ import {Router } from '@angular/router'
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css'],
-  providers: [DataService],
+ 
 })
 export class ListComponent implements OnInit {
   registerForm: FormGroup;
@@ -53,9 +53,14 @@ this.cityData=city;
       state:this.stateName,
       city:this.cityData
     }
-    let name= 'Sangeeta'
-    this.dataService.StateCityData(name);
-   // this.router.navigate(['/result'])
+    
+    this.dataService.StateCityData(obj);
+    if(this.dataService.newdata$.subscribe((res)=>console.log(res))){
+      this.router.navigate(['/display']);
+
+    }
+   
+  
   }
 
 

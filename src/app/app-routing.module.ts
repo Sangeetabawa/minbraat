@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListComponent} from './list/list.component';
-import { ResultComponent} from './result/result.component'
+import {DisplayComponent} from './display/display.component';
 
 
 const routes: Routes = [
   { path:'list', component: ListComponent },
-  { path:'result', component: ResultComponent },
+  { path:'display', component: DisplayComponent },
 ];
 
 @NgModule({
